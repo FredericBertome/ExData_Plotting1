@@ -1,0 +1,5 @@
+fichier <- read.csv(file = "household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?", colClasses = c("character","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"))
+powerconsumption <- subset(fichier, fichier$Date=="1/2/2007" | fichier$Date=="2/2/2007")
+hist(powerconsumption$Global_active_power, col = "red", main = "Global Active Power")
+dev.copy(png, file = "~/Documents/01_Knowledge/01_Coursera/Exploratory_Data_Analysis/Week1/Plot1.png", width = 480, height = 480, units = "px")
+dev.off()
